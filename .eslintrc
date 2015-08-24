@@ -50,6 +50,7 @@
         "react"
     ],
     "globals": {
-        "componentHandler": true
+        "componentHandler": true,
+        "Prism": true
     }
 }
