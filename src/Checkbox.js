@@ -9,7 +9,8 @@ class Checkbox extends React.Component {
         id: PropTypes.string,
         label: PropTypes.string,
         onChange: PropTypes.func.isRequired,
-        ripple: PropTypes.bool
+        ripple: PropTypes.bool,
+        className: PropTypes.string
     }
 
     static defaultProps = {
@@ -24,8 +25,10 @@ class Checkbox extends React.Component {
         var { checked, disabled, id, label, ripple } = this.props;
 
         var inputId = 'checkbox-' + (label || id).replace(/\s+/g, '');
-        var classes = classNames('mdl-checkbox mdl-js-checkbox', {
-            'mdl-js-ripple-effect': ripple
+        var classes = classNames(this.props.className, {
+            'mdl-checkbox mdl-js-checkbox': true
+            'mdl-js-ripple-effect': ripple,
+            
         });
 
         return (
